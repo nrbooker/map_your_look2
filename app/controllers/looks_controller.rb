@@ -13,9 +13,9 @@ class LooksController < ApplicationController
 
   def create
     @look = Look.new
+    @look.selfie = params[:selfie]
     @look.makeup = params[:makeup]
     @look.notes = params[:notes]
-    @look.selfie = params[:selfie]
     @look.event = params[:event]
     @look.user_id = params[:user_id]
 
