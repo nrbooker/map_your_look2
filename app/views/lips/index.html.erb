@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Lip Looks
+    <a href="/lips/new" class="btn btn-lg btn-success">Add New Look</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Selfie</th>
+        <th>Look</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @lips.each do |lip| %>
+      <tr>
+        <td><%= lip.selfie %></td>
+        <td><%= lip.look_id %></td>
+        <td>
+          <a href="/lips/<%= lip.id %>" class="btn btn-primary">Show</a>
+          <a href="/lips/<%= lip.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_lip/<%= lip.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
